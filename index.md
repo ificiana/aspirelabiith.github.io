@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Autonomous Systems, Perception, Intelligence, and Robotic Exploration Lab
 ---
 
 # ASPIRE Lab
