@@ -1,6 +1,9 @@
 title: ASPIRE Lab
-theme: jekyll-theme-cayman
+description: Autonomous Systems using AI for Perception, Intelligence, and Robotic Exploration
 url: "https://aspirelabiith.github.io"
-baseurl: ""            # must be empty for user sites
-timezone: Asia/Kolkata
+baseurl: ""
+remote_theme: alshedivat/al-folio@main
 
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
