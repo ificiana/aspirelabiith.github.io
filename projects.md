@@ -25,10 +25,9 @@ Principal Investigator: R Prasanth Kumar
 Duration: April 2021 - April 2025  
 Agency: Asymmetric Technologies, DYSL-AT, Hyderabad
 
-+ Design and Fabrication of Autonomous Passenger Drone
-Principal Investigor: Vineeth Balasubramanian
-Co-PI: B Venkatesham
-Invesigator: R Prasanth Kumar
-Duration: 2019-2024
++ Design and Fabrication of Autonomous Passenger Drone  
+Principal Investigor: Vineeth Balasubramanian, Co-PI: B Venkatesham  
+Invesigator: R Prasanth Kumar  
+Duration: 2019-2024  
 Agency: MEITY
 
