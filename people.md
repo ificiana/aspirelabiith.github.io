@@ -6,13 +6,16 @@ permalink: /people/
 
 {% include nav.html %}
 
-# Our Team
+# Group Members  
+
+## Faculty
 
 **R Prasanth Kumar**  
-Principal Investigator  
+Head of the Lab  
 Professor, Department of Mechaincal & Aerospace Engineering  
 Affiliate Professor, Department of Artificial Intelligence
 
+## PhD Students  
 **Krishnendu Roy**  
 PhD Student
 
@@ -22,6 +25,7 @@ PhD Student
 **B V Shiva Reddy**  
 PhD Student
 
+## Masters Students
 **S Rami Reddy**  
 MTech Student (Mechanics and Design)
 
@@ -40,5 +44,6 @@ MTech Student (Mechanics and Design)
 **VVS Viswa Kiran**  
 MTech Student (Artifical Intelligence)
 
+## Undergraduate Research Students
 **Shriram Hari**  
 BTech Student (Mechanical Engineering)
