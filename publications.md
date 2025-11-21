@@ -8,7 +8,7 @@ permalink: /publications/
 
 # Recent Publications
 
-- N Shyam Sridhar, Aashish Sahu, S Rami Reddy, and R Prasanth Kumar, "*Collaborative Payload Transport using a Four-Quadcopter Swarm with RTK and MQTT-based Coordination,*" IEEE International Conference on Robotics and Mechatronics, 2025.  
+- N Shyam Sridhar, Aashish Sahu, S Rami Reddy, and R Prasanth Kumar, "*Collaborative Payload Transport using a Four-Quadcopter Swarm with RTK and MQTT-based Coordination,*" IEEE International Conference on Robotics and Mechatronics, 2025. <span style="color:#159957;"><strong>[Best Paper Award]</strong></span>  
 
 - Krishnendu Roy and R Prasanth Kumar, "*Prismatic-Revolute Hybrid Biped Robot Walking in Unstructured Terrain using Reinforcement Learning,*" IEEE International Conference on Robotics and Mechatronics, 2025.  
 
