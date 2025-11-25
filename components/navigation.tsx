@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { usePathname } from "next/navigation"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { Logo } from "./logo";
 
 const navItems = [
   { title: "Home", url: "/" },
@@ -13,17 +13,17 @@ const navItems = [
   { title: "Publications", url: "/publications" },
   { title: "Projects", url: "/projects" },
   { title: "Positions", url: "/positions" },
-]
+];
 
 export function Navigation() {
-  const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 0)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50">
@@ -31,13 +31,7 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex flex-col md:flex-row md:items-center md:justify-between py-4 gap-4">
             <Link href="/" className="group flex items-center gap-3">
-              <Image 
-                src="/logo.png" 
-                alt="ASPIRE Lab Logo" 
-                width={48} 
-                height={48} 
-                className="object-contain transform group-hover:scale-110 transition-transform duration-300"
-              />
+              <Logo />
               <div>
                 <h1 className="text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   ASPIRE Lab
@@ -47,12 +41,12 @@ export function Navigation() {
                 </p>
               </div>
             </Link>
-            
+
             <div className="flex items-center gap-4">
               <ul className="flex flex-wrap items-center gap-1">
                 {navItems.map((item) => (
                   <li key={item.url}>
-                    <Link 
+                    <Link
                       href={item.url}
                       className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
                         pathname === item.url
@@ -65,7 +59,7 @@ export function Navigation() {
                   </li>
                 ))}
               </ul>
-              
+
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -84,5 +78,5 @@ export function Navigation() {
         </div>
       </div>
     </header>
-  )
+  );
 }

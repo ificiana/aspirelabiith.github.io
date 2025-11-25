@@ -19,7 +19,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "ASPIRE Lab",
-  description: "Autonomous Systems, Perception, Intelligence, Robotics, and Exploration",
+  description:
+    "Autonomous Systems, Perception, Intelligence, Robotics, and Exploration",
 };
 
 export default function RootLayout({
@@ -40,7 +41,8 @@ export default function RootLayout({
           <main className="flex-grow relative z-10">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
               <article className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800 p-8 sm:p-12 lg:p-16 transition-colors duration-300">
-                <div className="prose prose-lg md:prose-xl prose-slate dark:prose-invert max-w-none
+                <div
+                  className="prose prose-lg md:prose-xl prose-slate dark:prose-invert max-w-none
                   prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight
                   prose-h1:text-4xl md:prose-h1:text-6xl prose-h1:mb-8 prose-h1:leading-tight prose-h1:text-gray-900 dark:prose-h1:text-white
                   prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:text-gray-900 dark:prose-h2:text-white 
@@ -62,7 +64,8 @@ export default function RootLayout({
                   prose-table:border prose-table:border-gray-300 dark:prose-table:border-gray-700
                   prose-thead:bg-gray-100 dark:prose-thead:bg-slate-800
                   prose-th:p-3 prose-th:font-semibold
-                  prose-td:p-3 prose-td:border-t prose-td:border-gray-200 dark:prose-td:border-gray-700">
+                  prose-td:p-3 prose-td:border-t prose-td:border-gray-200 dark:prose-td:border-gray-700"
+                >
                   {children}
                 </div>
               </article>
