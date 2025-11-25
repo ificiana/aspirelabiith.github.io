@@ -1,15 +1,8 @@
 import Image from "next/image";
-
-import nextConfig from "../next.config";
+import LogoImage from "../public/logo.png";
 
 export function Logo() {
   return (
-    <Image
-      src={`${nextConfig.basePath}/logo.png`}
-      alt="ASPIRE Lab Logo"
-      width={48}
-      height={48}
-      className="object-contain"
-    />
+    <Image src={LogoImage} alt="ASPIRE Lab Logo" className="object-contain" />
   );
 }

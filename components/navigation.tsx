@@ -37,7 +37,7 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+      <div className="bg-card/80 backdrop-blur-xl border-b border-border/50 shadow-lg">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <nav className="flex items-center justify-between py-3 sm:py-4">
             <Link href="/" className="group flex items-center gap-2 sm:gap-3">
@@ -45,10 +45,10 @@ export function Navigation() {
                 <Logo />
               </div>
               <div className="min-w-0">
-                <h1 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors truncate">
+                <h1 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground group-hover:text-primary transition-colors truncate">
                   ASPIRE Lab
                 </h1>
-                <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 hidden sm:block line-clamp-1">
+                <p className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block line-clamp-1">
                   Autonomous Systems, Perception, Intelligence, Robotics, and
                   Exploration
                 </p>
@@ -64,8 +64,8 @@ export function Navigation() {
                       href={item.url}
                       className={`px-3 py-2 text-sm rounded-lg font-medium transition-all duration-200 ${
                         pathname === item.url
-                          ? "text-primary-600 dark:text-primary-400 bg-gray-100 dark:bg-slate-800"
-                          : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-slate-800"
+                          ? "text-primary bg-accent"
+                          : "text-foreground/80 hover:text-primary hover:bg-accent"
                       }`}
                     >
                       {item.title}
@@ -136,8 +136,8 @@ export function Navigation() {
                             onClick={() => setMobileMenuOpen(false)}
                             className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                               pathname === item.url
-                                ? "text-primary-600 dark:text-primary-400 bg-gray-100 dark:bg-slate-800"
-                                : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-slate-800"
+                                ? "text-primary bg-accent"
+                                : "text-foreground/80 hover:text-primary hover:bg-accent"
                             }`}
                           >
                             {item.title}

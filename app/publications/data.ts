@@ -19,7 +19,8 @@ type Patent = {
 const publications: Array<Publication> = [
   {
     id: "collaborative-payload-transport-2025",
-    authors: "N Shyam Sridhar, Aashish Sahu, S Rami Reddy, and R Prasanth Kumar",
+    authors:
+      "N Shyam Sridhar, Aashish Sahu, S Rami Reddy, and R Prasanth Kumar",
     title:
       "Collaborative Payload Transport using a Four-Quadcopter Swarm with RTK and MQTT-based Coordination",
     venue: "IEEE International Conference on Robotics and Mechatronics, 2025",
