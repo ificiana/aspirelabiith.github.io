@@ -1,46 +1,7 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-
-const currentProjects = [
-  {
-    title:
-      "Design and Development of Autonomous Wheeled Humanoid Robot for Anubhava Mantapa",
-    pi: "R Prasanth Kumar",
-    duration: "Feb 2025 - Ongoing",
-    agency: "Bharath Aap Technologies",
-  },
-  {
-    title:
-      "Fabrication and Maintenance of Autonomous Wheeled Humanoid Robot for Anubhava Mantapa",
-    pi: "R Prasanth Kumar",
-    duration: "Feb 2025 - Ongoing",
-    agency: "Nurture and Nature Enterprises",
-  },
-];
-
-const completedProjects = [
-  {
-    title:
-      "Design and Development of Collaborative Payload Maneuvering with 04 Number of UAVs",
-    pi: "R Prasanth Kumar",
-    duration: "April 2021 - April 2025",
-    agency: "Asymmetric Technologies, DYSL-AT, Hyderabad",
-  },
-  {
-    title: "Design and Fabrication of Autonomous Passenger Drone",
-    pi: "Vineeth Balasubramanian",
-    coPi: "B Venkatesham",
-    investigator: "R Prasanth Kumar",
-    duration: "2019 - 2024",
-    agency: "MEITY",
-  },
-];
+import { currentProjects, completedProjects } from "./data";
 
 export default function ProjectsPage() {
   return (
@@ -58,8 +19,12 @@ export default function ProjectsPage() {
             <Card key={idx}>
               <CardHeader>
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                  <CardTitle className="text-base sm:text-lg leading-snug">{project.title}</CardTitle>
-                  <Badge variant="default" className="w-fit text-xs">Active</Badge>
+                  <CardTitle className="text-base sm:text-lg leading-snug">
+                    {project.title}
+                  </CardTitle>
+                  <Badge variant="default" className="w-fit text-xs">
+                    Active
+                  </Badge>
                 </div>
               </CardHeader>
               <CardContent className="space-y-1.5 sm:space-y-2">
@@ -87,7 +52,9 @@ export default function ProjectsPage() {
 
       <div className="space-y-4 sm:space-y-6">
         <div className="space-y-1 sm:space-y-2">
-          <h1 className="text-2xl sm:text-3xl font-bold">Recently Completed Projects</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold">
+            Recently Completed Projects
+          </h1>
           <p className="text-sm sm:text-base text-muted-foreground">
             Successfully delivered research projects
           </p>
@@ -98,8 +65,12 @@ export default function ProjectsPage() {
             <Card key={idx}>
               <CardHeader>
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                  <CardTitle className="text-base sm:text-lg leading-snug">{project.title}</CardTitle>
-                  <Badge variant="secondary" className="w-fit text-xs">Completed</Badge>
+                  <CardTitle className="text-base sm:text-lg leading-snug">
+                    {project.title}
+                  </CardTitle>
+                  <Badge variant="secondary" className="w-fit text-xs">
+                    Completed
+                  </Badge>
                 </div>
               </CardHeader>
               <CardContent className="space-y-1.5 sm:space-y-2">

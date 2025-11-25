@@ -49,7 +49,8 @@ export function Navigation() {
                   ASPIRE Lab
                 </h1>
                 <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 hidden sm:block line-clamp-1">
-                  Autonomous Systems, Perception, Intelligence, Robotics, and Exploration
+                  Autonomous Systems, Perception, Intelligence, Robotics, and
+                  Exploration
                 </p>
               </div>
             </Link>

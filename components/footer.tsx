@@ -109,7 +109,10 @@ export function Footer() {
               collaboration and research opportunities.
             </p>
             <Button asChild size="sm" className="w-auto">
-              <Link href="/positions" className="group inline-flex items-center justify-center">
+              <Link
+                href="/positions"
+                className="group inline-flex items-center justify-center"
+              >
                 <span>View Positions</span>
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>

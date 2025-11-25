@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import "@/app/globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+
+import "@/app/globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
