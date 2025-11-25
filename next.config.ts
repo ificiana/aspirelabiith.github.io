@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
-const BASEPATH = "/aspirelabiith.github.io";
-
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: BASEPATH,
+  basePath: "/aspirelabiith.github.io",
   images: {
     unoptimized: true,
   },

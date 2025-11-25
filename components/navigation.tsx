@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const navItems = [
   { title: "Home", url: "/" },
@@ -20,6 +28,7 @@ export function Navigation() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 0);
@@ -29,27 +38,30 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex flex-col md:flex-row md:items-center md:justify-between py-4 gap-4">
-            <Link href="/" className="group flex items-center gap-3">
-              <Logo />
-              <div>
-                <h1 className="text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <nav className="flex items-center justify-between py-3 sm:py-4">
+            <Link href="/" className="group flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0">
+                <Logo />
+              </div>
+              <div className="min-w-0">
+                <h1 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors truncate">
                   ASPIRE Lab
                 </h1>
-                <p className="text-xs text-gray-600 dark:text-gray-400 hidden sm:block">
-                  Autonomous Systems, Perception, Intelligence...
+                <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 hidden sm:block line-clamp-1">
+                  Autonomous Systems, Perception, Intelligence, Robotics, and Exploration
                 </p>
               </div>
             </Link>
 
-            <div className="flex items-center gap-4">
-              <ul className="flex flex-wrap items-center gap-1">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-4">
+              <ul className="flex items-center gap-1">
                 {navItems.map((item) => (
                   <li key={item.url}>
                     <Link
                       href={item.url}
-                      className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
+                      className={`px-3 py-2 text-sm rounded-lg font-medium transition-all duration-200 ${
                         pathname === item.url
                           ? "text-primary-600 dark:text-primary-400 bg-gray-100 dark:bg-slate-800"
                           : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-slate-800"
@@ -66,15 +78,75 @@ export function Navigation() {
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   variant="outline"
                   size="icon"
+                  className="h-9 w-9 shrink-0"
                   aria-label="Toggle theme"
                 >
                   {theme === "dark" ? (
-                    <Sun className="h-[1.2rem] w-[1.2rem]" />
+                    <Sun className="h-5 w-5" />
                   ) : (
-                    <Moon className="h-[1.2rem] w-[1.2rem]" />
+                    <Moon className="h-5 w-5" />
                   )}
                 </Button>
               )}
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="flex md:hidden items-center gap-2">
+              {mounted && (
+                <Button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 shrink-0"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? (
+                    <Sun className="h-4 w-4" />
+                  ) : (
+                    <Moon className="h-4 w-4" />
+                  )}
+                </Button>
+              )}
+
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-8 w-8 shrink-0"
+                    aria-label="Toggle menu"
+                  >
+                    <Menu className="h-4 w-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                  <SheetHeader>
+                    <SheetTitle className="text-left hidden">Menu</SheetTitle>
+                    <SheetDescription className="text-left hidden">
+                      Navigate to different sections of the site
+                    </SheetDescription>
+                  </SheetHeader>
+                  <nav className="mt-6">
+                    <ul className="space-y-2">
+                      {navItems.map((item) => (
+                        <li key={item.url}>
+                          <Link
+                            href={item.url}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                              pathname === item.url
+                                ? "text-primary-600 dark:text-primary-400 bg-gray-100 dark:bg-slate-800"
+                                : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-slate-800"
+                            }`}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </SheetContent>
+              </Sheet>
             </div>
           </nav>
         </div>

@@ -15,29 +15,31 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 mt-20 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+    <footer className="relative z-10 bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 mt-12 sm:mt-16 md:mt-20 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           {/* Brand section */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <Logo />
-              <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white">
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 shrink-0">
+                <Logo />
+              </div>
+              <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-gray-900 dark:text-white">
                 ASPIRE Lab
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0">
               Autonomous Systems, Perception, Intelligence, Robotics, and
               Exploration
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3 justify-center sm:justify-start">
               <a
                 href="#"
-                className="w-9 h-9 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
                 aria-label="GitHub"
               >
                 <svg
-                  className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -50,11 +52,11 @@ export function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
                 aria-label="Twitter"
               >
                 <svg
-                  className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -63,11 +65,11 @@ export function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
                 aria-label="LinkedIn"
               >
                 <svg
-                  className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -78,18 +80,18 @@ export function Footer() {
           </div>
 
           {/* Navigation links */}
-          <div>
+          <div className="hidden text-left sm:block">
             <h4 className="text-base font-display font-semibold mb-4 text-gray-900 dark:text-white">
               Quick Links
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {navItems.map((item) => (
                 <li key={item.url}>
                   <Link
                     href={item.url}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors inline-flex items-center gap-2 group text-sm"
                   >
-                    <ChevronRight className="w-3 h-3 text-primary-500 transform group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-3 h-3 text-primary-500 transform group-hover:translate-x-1 transition-transform shrink-0" />
                     {item.title}
                   </Link>
                 </li>
@@ -98,31 +100,31 @@ export function Footer() {
           </div>
 
           {/* CTA section */}
-          <div className="space-y-4">
-            <h4 className="text-base font-display font-semibold mb-4 text-gray-900 dark:text-white">
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+            <h4 className="text-sm sm:text-base font-display font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">
               Get Involved
             </h4>
-            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0">
               Join us in advancing robotics and AI research. Explore
               collaboration and research opportunities.
             </p>
-            <Button asChild>
-              <Link href="/positions" className="group">
+            <Button asChild size="sm" className="w-auto">
+              <Link href="/positions" className="group inline-flex items-center justify-center">
                 <span>View Positions</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="border-t border-gray-300 dark:border-gray-700 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-600 dark:text-gray-400">
+        <div className="border-t border-gray-300 dark:border-gray-700 pt-4 sm:pt-6 md:pt-8 mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 text-center">
+          <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 order-2 sm:order-1">
             &copy; {currentYear}{" "}
             <span className="font-semibold">ASPIRE Lab</span>. All rights
             reserved.
           </p>
-          <p className="text-xs text-gray-500 dark:text-gray-500">
+          <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 order-1 sm:order-2">
             Built with Next.js & Tailwind CSS
           </p>
         </div>

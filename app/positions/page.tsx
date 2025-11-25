@@ -33,7 +33,7 @@ export default function PositionsPage() {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Positions Available</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold">Positions Available</h1>
         <p className="text-muted-foreground">
           Join our team and contribute to cutting-edge robotics research
         </p>

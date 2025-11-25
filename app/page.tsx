@@ -1,22 +1,13 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
 export default function Home() {
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>ASPIRE Lab</CardTitle>
-          <CardDescription>
+        <p className="text-center">
+          <b>ASPIRE Lab</b><br />
+          <span className="text-sm text-muted-foreground">
             Department of Mechanical and Aerospace Engineering, IIT Hyderabad
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </span>
+        </p>
+        <div className="space-y-4">
           <p>Welcome to the lab website.</p>
 
           <p>
@@ -40,8 +31,8 @@ export default function Home() {
             autonomous systems for <strong>exploration</strong>, interaction,
             and real-world operation.
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      
     </div>
   );
 }
