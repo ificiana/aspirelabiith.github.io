@@ -133,6 +133,38 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+      linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+    background-size: 
+      100px 100px,
+      100px 100px,
+      20px 20px,
+      20px 20px;
+    background-position:
+      -1px -1px,
+      -1px -1px,
+      -1px -1px,
+      -1px -1px;
+  }
+  .dark body {
+    background-image: 
+      linear-gradient(rgba(96, 165, 250, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.1) 1px, transparent 1px),
+      linear-gradient(rgba(96, 165, 250, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.04) 1px, transparent 1px);
+    background-size: 
+      100px 100px,
+      100px 100px,
+      20px 20px,
+      20px 20px;
+    background-position:
+      -1px -1px,
+      -1px -1px,
+      -1px -1px,
+      -1px -1px;
   }
   button {
     cursor: pointer;
