@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import {
   Card,
   CardContent,
@@ -20,7 +20,7 @@ import {
 } from "./data";
 import nextConfig from "../../next.config";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Research Team - ASPIRE Lab IIT Hyderabad",
   description:
     "Meet the ASPIRE Lab research team at IIT Hyderabad. Our team includes faculty members, PhD students, Masters students, and undergraduate researchers working on autonomous robotics, AI, and machine learning.",
@@ -29,16 +29,9 @@ export const metadata: Metadata = {
     "IIT Hyderabad faculty",
     "robotics PhD students",
     "autonomous systems researchers",
-    "ASPIRE Lab team",
     "robotics laboratory",
   ],
-  openGraph: {
-    title: "Research Team - ASPIRE Lab IIT Hyderabad",
-    description:
-      "Meet our research team working on autonomous systems, robotics, and artificial intelligence",
-    type: "website",
-  },
-};
+});
 
 function getInitials(name: string) {
   return name

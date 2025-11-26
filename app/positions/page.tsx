@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { positions } from "./data";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Open Positions - ASPIRE Lab IIT Hyderabad",
   description:
     "Join ASPIRE Lab at IIT Hyderabad. We are recruiting PhD students, postdoctoral researchers, and research assistants for cutting-edge robotics and autonomous systems research. Explore current openings and application details.",
@@ -17,13 +17,7 @@ export const metadata: Metadata = {
     "autonomous systems careers",
     "robotics laboratory jobs",
   ],
-  openGraph: {
-    title: "Open Positions - ASPIRE Lab IIT Hyderabad",
-    description:
-      "Join our team working on cutting-edge robotics and autonomous systems research",
-    type: "website",
-  },
-};
+});
 
 export default function PositionsPage() {
   return (

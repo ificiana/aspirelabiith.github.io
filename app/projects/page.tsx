@@ -1,31 +1,23 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { currentProjects, completedProjects } from "./data";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Research Projects - ASPIRE Lab IIT Hyderabad",
   description:
     "Explore current and completed research projects at ASPIRE Lab, IIT Hyderabad. Our projects span autonomous robotics, drone systems, deep learning, computer vision, and intelligent control systems funded by leading agencies.",
   keywords: [
     "robotics projects",
     "autonomous systems research",
-    "IIT Hyderabad research",
     "drone research",
     "AI projects",
-    "machine learning research",
     "funded research projects",
     "DST projects",
     "research grants",
   ],
-  openGraph: {
-    title: "Research Projects - ASPIRE Lab IIT Hyderabad",
-    description:
-      "Current and completed research projects in autonomous robotics and AI",
-    type: "website",
-  },
-};
+});
 
 export default function ProjectsPage() {
   return (

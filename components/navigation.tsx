@@ -15,14 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
-const navItems = [
-  { title: "Home", url: "/" },
-  { title: "People", url: "/people" },
-  { title: "Publications", url: "/publications" },
-  { title: "Projects", url: "/projects" },
-  { title: "Positions", url: "/positions" },
-];
+import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -46,11 +39,10 @@ export function Navigation() {
               </div>
               <div className="min-w-0">
                 <h1 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground group-hover:text-primary transition-colors truncate">
-                  ASPIRE Lab
+                  {SITE_CONFIG.name}
                 </h1>
                 <p className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block line-clamp-1">
-                  Autonomous Systems, Perception, Intelligence, Robotics, and
-                  Exploration
+                  {SITE_CONFIG.fullName}
                 </p>
               </div>
             </Link>
@@ -58,7 +50,7 @@ export function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-4">
               <ul className="flex items-center gap-1">
-                {navItems.map((item) => (
+                {NAV_ITEMS.map((item) => (
                   <li key={item.url}>
                     <Link
                       href={item.url}
@@ -129,7 +121,7 @@ export function Navigation() {
                   </SheetHeader>
                   <nav className="mt-6">
                     <ul className="space-y-2">
-                      {navItems.map((item) => (
+                      {NAV_ITEMS.map((item) => (
                         <li key={item.url}>
                           <Link
                             href={item.url}

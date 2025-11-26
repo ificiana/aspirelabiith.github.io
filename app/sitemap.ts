@@ -1,13 +1,12 @@
 import { MetadataRoute } from "next";
 import { publications } from "./publications/data";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://aspirelabiith.github.io";
-
   const publicationUrls = publications.map((pub) => ({
-    url: `${baseUrl}/publications/${pub.id}`,
+    url: `${SITE_CONFIG.baseUrl}/publications/${pub.id}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -15,31 +14,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: baseUrl,
+      url: SITE_CONFIG.baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/people`,
+      url: `${SITE_CONFIG.baseUrl}/people`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: `${SITE_CONFIG.baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/publications`,
+      url: `${SITE_CONFIG.baseUrl}/publications`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/positions`,
+      url: `${SITE_CONFIG.baseUrl}/positions`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

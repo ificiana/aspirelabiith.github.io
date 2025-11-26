@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ROOT_METADATA } from "@/lib/metadata";
 
 import "@/app/globals.css";
 
@@ -18,53 +18,7 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://aspirelabiith.github.io"),
-  title: {
-    default: "ASPIRE Lab - IIT Hyderabad",
-    template: "%s | ASPIRE Lab",
-  },
-  description:
-    "Autonomous Systems, Perception, Intelligence, Robotics, and Exploration Lab at IIT Hyderabad. Research in autonomous robots, deep learning, computer vision, and intelligent control.",
-  keywords: [
-    "robotics",
-    "autonomous systems",
-    "IIT Hyderabad",
-    "artificial intelligence",
-    "machine learning",
-    "computer vision",
-    "control systems",
-  ],
-  authors: [{ name: "ASPIRE Lab, IIT Hyderabad" }],
-  creator: "ASPIRE Lab",
-  publisher: "IIT Hyderabad",
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: "https://aspirelabiith.github.io",
-    siteName: "ASPIRE Lab",
-    title: "ASPIRE Lab - IIT Hyderabad",
-    description:
-      "Autonomous Systems, Perception, Intelligence, Robotics, and Exploration",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ASPIRE Lab - IIT Hyderabad",
-    description:
-      "Autonomous Systems, Perception, Intelligence, Robotics, and Exploration",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+export const metadata = ROOT_METADATA;
 
 export default function RootLayout({
   children,

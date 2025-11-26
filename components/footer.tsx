@@ -9,14 +9,13 @@ import {
 import { Logo } from "./logo";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
-const navItems = [
-  { title: "Home", url: "/" },
-  { title: "People", url: "/people" },
-  { title: "Publications", url: "/publications" },
-  { title: "Projects", url: "/projects" },
-  { title: "Positions", url: "/positions" },
-];
+const iconMap = {
+  Home,
+  GraduationCap,
+  User,
+} as const;
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,41 +31,28 @@ export function Footer() {
                 <Logo />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-gray-900 dark:text-white">
-                ASPIRE Lab
+                {SITE_CONFIG.name}
               </h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0">
-              Autonomous Systems, Perception, Intelligence, Robotics, and
-              Exploration
+              {SITE_CONFIG.fullName}
             </p>
             <div className="flex gap-2 sm:gap-3 justify-center sm:justify-start">
-              <a
-                href="https://www.iith.ac.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
-                aria-label="IIT Hyderabad"
-              >
-                <Home className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://mae.iith.ac.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
-                aria-label="MAE Department"
-              >
-                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://people.iith.ac.in/rpkumar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
-                aria-label="Dr. R Prasanth Kumar"
-              >
-                <User className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-              </a>
+              {SOCIAL_LINKS.map((link) => {
+                const Icon = iconMap[link.icon];
+                return (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-200 dark:bg-slate-800 hover:bg-primary-600 dark:hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                    aria-label={link.name}
+                  >
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -76,7 +62,7 @@ export function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-2.5">
-              {navItems.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <li key={item.url}>
                   <Link
                     href={item.url}
@@ -107,13 +93,13 @@ export function Footer() {
               />
             </div>
             <address className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 not-italic mt-3">
-              C-205/C-206, MAE Block
+              {SITE_CONFIG.address.line1}
               <br />
-              Department of Mechanical & Aerospace Engineering
+              {SITE_CONFIG.address.line2}
               <br />
-              IIT Hyderabad
+              {SITE_CONFIG.address.line3}
               <br />
-              Kandi, Sangareddy, Telangana - 502284
+              {SITE_CONFIG.address.line4}
             </address>
             <Button asChild size="sm" className="w-auto">
               <Link
@@ -131,17 +117,16 @@ export function Footer() {
         <div className="border-t border-gray-300 dark:border-gray-700 pt-4 sm:pt-6 md:pt-8 mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 text-center">
           <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 order-2 sm:order-1">
             &copy; {currentYear}{" "}
-            <span className="font-semibold">ASPIRE Lab</span>. All rights
-            reserved.
+            <span className="font-semibold">{SITE_CONFIG.name}</span>. All
+            rights reserved.
           </p>
           <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 order-1 sm:order-2">
-            {/* break line on mobile */}
             Inventing and Innovating in Technology for Humanity (IITH)
             <span className="hidden sm:inline"> - </span>
             <span className="sm:hidden">
               <br />
             </span>
-            Indian Institute of Technology, Hyderabad
+            {SITE_CONFIG.institution}
           </p>
         </div>
       </div>
