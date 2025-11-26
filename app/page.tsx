@@ -42,6 +42,9 @@ export default function Home() {
               Advancing Autonomous Robotic Systems with Perception, Learning,
               and Intelligent Decision-Making
             </p>
+            <p className="text-sm md:text-base font-light text-muted-foreground leading-relaxed">
+              Part of Department of Mechanical and Aerospace Engineering, IIT Hyderabad
+            </p>
           </div>
         </div>
         <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden bg-background rounded-3xl p-8 md:p-12">
@@ -54,7 +57,7 @@ export default function Home() {
                   className="bg-background/80 backdrop-blur-sm rounded-xl p-6 border border-border/50 hover:border-border transition-all hover:shadow-lg"
                 >
                   <div className="flex flex-col gap-2">
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                       <h3 className="text-xl font-semibold flex-1">
                         {item.link ? (
                           <Link
@@ -166,6 +169,15 @@ export default function Home() {
 
       {/* Split Section - First para left, UAV Right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
+        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden rounded-3xl">
+          <Image
+            src={HumanoidImage}
+            alt="Humanoid Robot Research"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         <div className="flex items-center justify-center bg-background px-8 md:px-16 py-16 lg:py-32">
           <div className="space-y-6 max-w-xl text-lg md:text-xl leading-relaxed">
             <p>
@@ -179,20 +191,11 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden rounded-3xl">
-          <Image
-            src={HumanoidImage}
-            alt="Humanoid Robot Research"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
       </section>
 
       {/* Split Section - Humanoid Left, Second para right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
-        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden rounded-3xl">
+        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden rounded-3xl order-1 md:order-2">
           <Image
             src={UAVImage}
             alt="Aerial Drones and UAV Research"
@@ -201,7 +204,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="flex items-center justify-center bg-background px-8 md:px-16 py-16 lg:py-32">
+        <div className="flex items-center justify-center bg-background px-8 md:px-16 py-16 lg:py-32 order-2 md:order-1">
           <div className="space-y-6 max-w-xl text-lg md:text-xl leading-relaxed">
             <p>
               Our work combines principles of conventional{" "}
