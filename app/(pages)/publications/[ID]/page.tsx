@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { publications } from "../data";
+import { publications } from "../../../../data/publications";
 
 export async function generateStaticParams() {
   return publications.map((pub) => ({
@@ -97,7 +97,7 @@ export default async function PublicationDetailPage({
           <div>
             <h2 className="text-xl font-semibold mb-3">Abstract</h2>
             <p className="text-muted-foreground leading-relaxed">
-              {publication.abstract}
+              {publication.abstract || "Abstract not available."}
             </p>
           </div>
 

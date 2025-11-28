@@ -87,7 +87,7 @@ export function Footer() {
               collaboration and research opportunities.
             </p>
             <div className="flex">
-              <Button asChild size="sm" className="w-auto">
+              <Button asChild size="sm" className="w-auto mx-auto sm:mx-0">
                 <Link
                   href="/positions"
                   className="group inline-flex items-center justify-center"
@@ -98,9 +98,9 @@ export function Footer() {
               </Button>
             </div>
             <div className="relative w-[75%] h-16 mt-2 mx-auto sm:mx-0">
-              <Image src={HZLogo} alt="IIT Hyderabad Logo" layout="fill" />
+              <Image src={HZLogo} alt="IIT Hyderabad Logo" />
             </div>
-            <address className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 not-italic mt-3">
+            <address className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 not-italic mt-8">
               {SITE_CONFIG.address.line1}
               <br />
               {SITE_CONFIG.address.line2}

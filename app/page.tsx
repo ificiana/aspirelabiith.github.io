@@ -4,7 +4,7 @@ import UAVImage from "@/public/uav.jpg";
 import HumanoidImage from "@/public/humanoid.png";
 // import CBlockImage from "@/public/cblock.png";
 import { Logo } from "@/components/logo";
-import { newsItems } from "@/lib/news";
+import { newsItems } from "@/data/news";
 import Link from "next/link";
 import { Users, BookOpen, Briefcase } from "lucide-react";
 

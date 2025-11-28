@@ -1,7 +1,7 @@
 import { createMetadata } from "@/lib/metadata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { positions } from "./data";
+import { positions } from "../../../data/positions";
 
 export const metadata = createMetadata({
   title: "Open Positions - ASPIRE Lab IIT Hyderabad",

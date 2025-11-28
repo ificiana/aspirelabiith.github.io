@@ -17,7 +17,7 @@ import {
   phdStudents,
   mastersStudents,
   undergradStudents,
-} from "./data";
+} from "../../../data/people";
 
 export const metadata = createMetadata({
   title: "Research Team - ASPIRE Lab IIT Hyderabad",

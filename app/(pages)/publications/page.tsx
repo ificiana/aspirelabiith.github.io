@@ -10,7 +10,8 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 
-import { publications, patents } from "./data";
+import { publications } from "../../../data/publications";
+import { patents } from "@/data/patents";
 
 export const metadata = createMetadata({
   title: "Publications & Patents - ASPIRE Lab IIT Hyderabad",
