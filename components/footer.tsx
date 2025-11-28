@@ -10,6 +10,7 @@ import { Logo } from "./logo";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
+import HZLogo from "../public/horzlogolong.png";
 
 const iconMap = {
   Home,
@@ -85,12 +86,19 @@ export function Footer() {
               Join us in advancing robotics and AI research. Explore
               collaboration and research opportunities.
             </p>
+            <div className="flex">
+              <Button asChild size="sm" className="w-auto">
+                <Link
+                  href="/positions"
+                  className="group inline-flex items-center justify-center"
+                >
+                  <span>View Positions</span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
             <div className="relative w-[75%] h-16 mt-2 mx-auto sm:mx-0">
-              <Image
-                src="https://www.iith.ac.in/assets/images/horzlogolong.png"
-                alt="IIT Hyderabad Logo"
-                layout="fill"
-              />
+              <Image src={HZLogo} alt="IIT Hyderabad Logo" layout="fill" />
             </div>
             <address className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 not-italic mt-3">
               {SITE_CONFIG.address.line1}
@@ -101,15 +109,6 @@ export function Footer() {
               <br />
               {SITE_CONFIG.address.line4}
             </address>
-            <Button asChild size="sm" className="w-auto">
-              <Link
-                href="/positions"
-                className="group inline-flex items-center justify-center"
-              >
-                <span>View Positions</span>
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
           </div>
         </div>
 

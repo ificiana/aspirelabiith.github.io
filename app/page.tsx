@@ -43,7 +43,8 @@ export default function Home() {
               and Intelligent Decision-Making
             </p>
             <p className="text-sm md:text-base font-light text-muted-foreground leading-relaxed">
-              Part of Department of Mechanical and Aerospace Engineering, IIT Hyderabad
+              Part of Department of Mechanical and Aerospace Engineering, IIT
+              Hyderabad
             </p>
           </div>
         </div>
@@ -95,7 +96,6 @@ export default function Home() {
         </div>
       </section>
 
-      
       {/* CTA Sections */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 lg:p-16">
         {/* People CTA */}
@@ -105,10 +105,8 @@ export default function Home() {
         >
           <div className="space-y-4">
             <div className="flex space-x-4 items-center">
-            <Users className="w-12 h-12 text-primary" />
-            <h3 className="text-2xl font-bold">
-              Meet Our Team
-            </h3>
+              <Users className="w-12 h-12 text-primary" />
+              <h3 className="text-2xl font-bold">Meet Our Team</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Discover the talented researchers and students driving innovation
@@ -128,9 +126,7 @@ export default function Home() {
           <div className="space-y-4">
             <div className="flex space-x-4 items-center">
               <BookOpen className="w-12 h-12 text-primary" />
-              <h3 className="text-2xl font-bold">
-                Our Research
-              </h3>
+              <h3 className="text-2xl font-bold">Our Research</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Explore our latest publications and contributions to robotics and
@@ -150,9 +146,7 @@ export default function Home() {
           <div className="space-y-4">
             <div className="flex space-x-4 items-center">
               <Briefcase className="w-12 h-12 text-primary" />
-              <h3 className="text-2xl font-bold">
-                Join Our Lab
-              </h3>
+              <h3 className="text-2xl font-bold">Join Our Lab</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Looking for PhD, postdoc, or research positions? Check out
@@ -165,7 +159,9 @@ export default function Home() {
         </Link>
       </section>
 
-      <h1 className="text-4xl font-bold text-center mt-8 mb-4 md:mt-16 md:mb-8">About ASPIRE</h1>
+      <h1 className="text-4xl font-bold text-center mt-8 mb-4 md:mt-16 md:mb-8">
+        About ASPIRE
+      </h1>
 
       {/* Split Section - First para left, UAV Right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
