@@ -1,8 +1,12 @@
+export const FORKING_USERNAME: string | null = "ificiana";
+
 export const SITE_CONFIG = {
   name: "ASPIRE Lab",
   fullName:
     "Autonomous Systems, Perception, Intelligence, Robotics, and Exploration",
-  baseUrl: "https://aspirelabiith.github.io",
+  baseUrl: FORKING_USERNAME
+    ? `https://${FORKING_USERNAME}.github.io/aspirelabiith.github.io`
+    : "https://aspirelabiith.github.io",
   department: "Department of Mechanical and Aerospace Engineering",
   institution: "IIT Hyderabad",
   address: {
