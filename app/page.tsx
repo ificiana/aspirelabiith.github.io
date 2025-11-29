@@ -174,7 +174,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="flex items-center justify-center bg-background px-8 md:px-16 py-16 lg:py-32">
+        <div className="flex items-center justify-center bg-background my-auto px-8 md:px-16 py-8 lg:py-16">
           <div className="space-y-6 max-w-xl text-lg md:text-xl leading-relaxed">
             <p>
               <strong>ASPIRE Lab</strong> at IITH focuses on advancing{" "}
@@ -200,7 +200,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="flex items-center justify-center bg-background px-8 md:px-16 py-16 lg:py-32 order-2 md:order-1">
+        <div className="flex items-center justify-center bg-background my-auto px-8 md:px-16 py-8 lg:py-16 order-2 md:order-1">
           <div className="space-y-6 max-w-xl text-lg md:text-xl leading-relaxed">
             <p>
               Our work combines principles of conventional{" "}

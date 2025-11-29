@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   department: "Department of Mechanical and Aerospace Engineering",
   institution: "IIT Hyderabad",
   address: {
-    line1: "C-205/C-206, MAE Block",
+    line1: "C-205, MAE Block",
     line2: "Department of Mechanical & Aerospace Engineering",
     line3: "IIT Hyderabad",
     line4: "Kandi, Sangareddy, Telangana - 502284",
