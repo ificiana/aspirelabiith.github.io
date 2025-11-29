@@ -10,14 +10,15 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Mail, Globe } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import {
   faculty,
   phdStudents,
   mastersStudents,
   undergradStudents,
-} from "../../../data/people";
+} from "@/data/people";
+import { Student } from "@/lib/types";
 
 export const metadata = createMetadata({
   title: "Research Team - ASPIRE Lab IIT Hyderabad",
@@ -41,6 +42,66 @@ function getInitials(name: string) {
     .slice(0, 2);
 }
 
+interface PersonImage {
+  image?: StaticImageData;
+  name: string;
+}
+
+function PersonAvatar({ image, name }: PersonImage) {
+  if (image) {
+    return (
+      <Image
+        src={image}
+        alt={name}
+        className="w-full h-full object-cover rounded-md"
+      />
+    );
+  }
+
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="text-6xl sm:text-7xl font-bold text-primary-600 dark:text-primary-300">
+        {getInitials(name)}
+      </div>
+    </div>
+  );
+}
+
+interface StudentCardProps {
+  student: Student;
+  badge: string;
+  description?: string;
+}
+
+function StudentCard({ student, badge, description }: StudentCardProps) {
+  return (
+    <Card key={student.name} className="overflow-hidden">
+      {student.image ? (
+        <div className="w-full sm:w-48 md:w-56 lg:w-64 h-[70%] shrink-0 mx-auto">
+          <PersonAvatar image={student.image} name={student.name} />
+        </div>
+      ) : (
+        <div className="aspect-square w-full bg-linear-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 sm:w-48 md:w-56 lg:w-64 h-[70%] shrink-0 mx-auto">
+          <PersonAvatar image={student.image} name={student.name} />
+        </div>
+      )}
+
+      <CardHeader className="space-y-2 text-center">
+        <CardTitle className="text-base sm:text-lg">{student.name}</CardTitle>
+        {description ? (
+          <CardDescription className="text-xs sm:text-sm">
+            {description}
+          </CardDescription>
+        ) : (
+          <Badge variant="secondary" className="mx-auto text-xs">
+            {badge}
+          </Badge>
+        )}
+      </CardHeader>
+    </Card>
+  );
+}
+
 export default function PeoplePage() {
   return (
     <div className="space-y-6 sm:space-y-8">
@@ -62,8 +123,6 @@ export default function PeoplePage() {
                     <Image
                       src={person.image}
                       alt={person.name}
-                      width={200}
-                      height={200}
                       className="w-full h-full object-contain rounded-md"
                     />
                   ) : (
@@ -141,33 +200,11 @@ export default function PeoplePage() {
         <h2 className="text-xl sm:text-2xl font-semibold">PhD Students</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {phdStudents.map((student) => (
-            <Card key={student.name} className="overflow-hidden">
-              <div className="aspect-square w-full bg-linear-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800">
-                {student.image ? (
-                  <Image
-                    src={student.image}
-                    alt={student.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-6xl sm:text-7xl font-bold text-primary-600 dark:text-primary-300">
-                      {getInitials(student.name)}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <CardHeader className="space-y-2 text-center">
-                <CardTitle className="text-base sm:text-lg">
-                  {student.name}
-                </CardTitle>
-                <Badge variant="secondary" className="mx-auto text-xs">
-                  PhD Student
-                </Badge>
-              </CardHeader>
-            </Card>
+            <StudentCard
+              key={student.name}
+              student={student}
+              badge="PhD Student"
+            />
           ))}
         </div>
       </div>
@@ -178,33 +215,12 @@ export default function PeoplePage() {
         <h2 className="text-xl sm:text-2xl font-semibold">Masters Students</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {mastersStudents.map((student) => (
-            <Card key={student.name} className="overflow-hidden">
-              <div className="aspect-square w-full bg-linear-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800">
-                {student.image ? (
-                  <Image
-                    src={student.image}
-                    alt={student.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-6xl sm:text-7xl font-bold text-primary-600 dark:text-primary-300">
-                      {getInitials(student.name)}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <CardHeader className="space-y-2 text-center">
-                <CardTitle className="text-base sm:text-lg">
-                  {student.name}
-                </CardTitle>
-                <CardDescription className="text-xs sm:text-sm">
-                  MTech ({student.program})
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <StudentCard
+              key={student.name}
+              student={student}
+              badge=""
+              description={`MTech (${student.program})`}
+            />
           ))}
         </div>
       </div>
@@ -217,33 +233,12 @@ export default function PeoplePage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {undergradStudents.map((student) => (
-            <Card key={student.name} className="overflow-hidden">
-              <div className="aspect-square w-full bg-linear-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800">
-                {student.image ? (
-                  <Image
-                    src={student.image}
-                    alt={student.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-6xl sm:text-7xl font-bold text-primary-600 dark:text-primary-300">
-                      {getInitials(student.name)}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <CardHeader className="space-y-2 text-center">
-                <CardTitle className="text-base sm:text-lg">
-                  {student.name}
-                </CardTitle>
-                <CardDescription className="text-xs sm:text-sm">
-                  BTech ({student.program})
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <StudentCard
+              key={student.name}
+              student={student}
+              badge=""
+              description={`BTech (${student.program})`}
+            />
           ))}
         </div>
       </div>

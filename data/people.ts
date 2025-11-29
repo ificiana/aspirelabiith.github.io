@@ -1,4 +1,12 @@
 import RPKumarImage from "@/public/people/Prasanth_Kumar_R.png";
+import AshishSahuImage from "@/public/people/Aashish.jpeg";
+import ArkaImage from "@/public/people/Arka.jpeg";
+import SaurabhImage from "@/public/people/Saurabh_Shukla.jpeg";
+import ViswaKiranImage from "@/public/people/Viswa_Kiran.jpeg";
+import RamiReddyImage from "@/public/people/Rami_Reddy.jpeg";
+import ChinniImage from "@/public/people/Chinnikrishna.jpeg";
+import SathwikImage from "@/public/people/Sathwik.jpeg";
+
 import { Faculty, Student } from "../lib/types";
 
 const faculty: Faculty[] = [
@@ -17,32 +25,40 @@ const faculty: Faculty[] = [
 
 const phdStudents: Student[] = [
   { name: "Krishnendu Roy", image: undefined },
-  { name: "Aashish Sahu", image: undefined },
+  { name: "Aashish Sahu", image: AshishSahuImage },
   { name: "B V Shiva Reddy", image: undefined },
 ];
 
 const mastersStudents: Student[] = [
-  { name: "S Rami Reddy", program: "Mechanics and Design", image: undefined },
+  {
+    name: "S Rami Reddy",
+    program: "Mechanics and Design",
+    image: RamiReddyImage,
+  },
   {
     name: "S Chinnikrishna Yadav",
     program: "Robotics and Intelligent Systems",
-    image: undefined,
+    image: ChinniImage,
   },
   {
     name: "Arkaprabha Sinha Roy",
     program: "Artificial Intelligence",
-    image: undefined,
+    image: ArkaImage,
   },
   {
     name: "B Vijaya Sathwik",
     program: "Mechanics and Design",
-    image: undefined,
+    image: SathwikImage,
   },
-  { name: "Saurabh Shukla", program: "Mechanics and Design", image: undefined },
+  {
+    name: "Saurabh Shukla",
+    program: "Mechanics and Design",
+    image: SaurabhImage,
+  },
   {
     name: "VVS Viswa Kiran",
     program: "Artificial Intelligence",
-    image: undefined,
+    image: ViswaKiranImage,
   },
 ];
 
