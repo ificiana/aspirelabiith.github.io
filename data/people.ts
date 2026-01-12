@@ -36,16 +36,6 @@ const mastersStudents: Student[] = [
     image: RamiReddyImage,
   },
   {
-    name: "S Chinnikrishna Yadav",
-    program: "Robotics and Intelligent Systems",
-    image: ChinniImage,
-  },
-  {
-    name: "Arkaprabha Sinha Roy",
-    program: "Artificial Intelligence",
-    image: ArkaImage,
-  },
-  {
     name: "B Vijaya Sathwik",
     program: "Mechanics and Design",
     image: SathwikImage,
@@ -60,6 +50,21 @@ const mastersStudents: Student[] = [
     program: "Artificial Intelligence",
     image: ViswaKiranImage,
   },
+  {
+    name: "Arkaprabha Sinha Roy",
+    program: "Artificial Intelligence",
+    image: ArkaImage,
+  },
+  {
+    name: "S Chinnikrishna Yadav",
+    program: "Robotics and Intelligent Systems",
+    image: ChinniImage,
+  },
+  {
+    name: "Nikhil Banoth",
+    program: "Artificial Intelligence",
+    image: undefined,
+  }
 ];
 
 const undergradStudents: Student[] = [

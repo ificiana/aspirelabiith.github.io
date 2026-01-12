@@ -165,12 +165,12 @@ export default function Home() {
 
       {/* Split Section - First para left, UAV Right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
-        <div className="relative min-h-150 lg:min-h-screen overflow-hidden rounded-3xl">
+        <div className="relative min-h-150 lg:min-h-screen rounded-3xl bg-muted/20 p-4 md:p-8">
           <Image
             src={HumanoidImage}
             alt="Humanoid Robot Research"
             fill
-            className="object-cover"
+            className="object-contain rounded-2xl"
             priority
           />
         </div>
@@ -191,12 +191,12 @@ export default function Home() {
 
       {/* Split Section - Humanoid Left, Second para right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
-        <div className="relative min-h-150 lg:min-h-screen overflow-hidden rounded-3xl order-1 md:order-2">
+        <div className="relative min-h-150 lg:min-h-screen rounded-3xl bg-muted/20 p-4 md:p-8 order-1 md:order-2">
           <Image
             src={UAVImage}
             alt="Aerial Drones and UAV Research"
             fill
-            className="object-cover"
+            className="object-contain rounded-2xl"
             priority
           />
         </div>
