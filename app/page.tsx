@@ -48,7 +48,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden bg-background rounded-3xl p-8 md:p-12">
+        <div className="relative min-h-150 lg:min-h-screen overflow-hidden bg-background rounded-3xl p-8 md:p-12">
           <div className="h-full flex flex-col">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Latest News</h2>
             <div className="overflow-y-auto space-y-6 pr-4 max-h-[75vh]">
@@ -165,7 +165,7 @@ export default function Home() {
 
       {/* Split Section - First para left, UAV Right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
-        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden rounded-3xl">
+        <div className="relative min-h-150 lg:min-h-screen overflow-hidden rounded-3xl">
           <Image
             src={HumanoidImage}
             alt="Humanoid Robot Research"
@@ -191,7 +191,7 @@ export default function Home() {
 
       {/* Split Section - Humanoid Left, Second para right */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-8 lg:gap-16 p-8 lg:p-16">
-        <div className="relative min-h-[600px] lg:min-h-screen overflow-hidden rounded-3xl order-1 md:order-2">
+        <div className="relative min-h-150 lg:min-h-screen overflow-hidden rounded-3xl order-1 md:order-2">
           <Image
             src={UAVImage}
             alt="Aerial Drones and UAV Research"
@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* Upcoming Gallery Section */}
-      <section className="p-8 lg:p-16">
+      {/* <section className="p-8 lg:p-16">
         <div className="text-center space-y-6 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold">Upcoming</h2>
           <p className="text-xl text-muted-foreground">
@@ -235,7 +235,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -129,6 +129,19 @@ export function Footer() {
             >
               Logo by Freepik
             </a>
+            <span className="hidden sm:inline"> | </span>
+            <span className="sm:hidden">
+              <br />
+            </span>
+            Designed and Maintained by{" "}
+            <a
+              href="https://ificiana.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 dark:text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              Arka
+            </a>
           </p>
           <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 order-1 sm:order-2">
             Inventing and Innovating in Technology for Humanity (IITH)
